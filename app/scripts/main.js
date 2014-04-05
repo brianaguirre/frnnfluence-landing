@@ -1,7 +1,6 @@
 console.log('\'Allo \'Allo!');
 
 $('#phone-input').mask('(999) 999-9999'); // Formats input field properly when peeps type
-var emptNum = '(123)456-7890';
 
 function empty(x){
   var empty = false;
@@ -28,5 +27,4 @@ $('#phone-input').keypress(function() {
   var value = $(this).val();
   if(value.length > 9 && empty(value) === true) {
     console.log('Full');
-  }
 });
