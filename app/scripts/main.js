@@ -21,11 +21,12 @@ function empty(x){
     }
   
   return empty;
-};
+}
 
 $('#phone-input').keypress(function() {
   var value = $(this).val();
   if(value.length > 9 && empty(value) === true) {
     console.log('Full');
     $(this).addClass('valid');
+  }
 });
