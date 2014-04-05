@@ -35,6 +35,13 @@
   -webkit-backface-visibility: hidden;
 }
 
+.valid {
+  &:after {
+    color: white;
+    content: '>';
+  }
+}
+
 form {
   width: 100%;
   text-align: center;
