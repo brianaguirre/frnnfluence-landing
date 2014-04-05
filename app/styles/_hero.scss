@@ -1,3 +1,5 @@
+@import "compass/css3/border-radius";
+
 .hero-unit {
   @include full-size-images($background: "/images/opening.jpg");
   color: white;
@@ -10,18 +12,37 @@
     font-family: $sans-serif;
     margin-top: -20px;
   }
-  p {
+  .battery {
     opacity: 0;
-    width: 100%;
     @include intro-animation($delay: 1.5s, $duration: 1s, $animation: fadein);
+  }
+  p {
+    width: 100%;
     text-align: center;
     padding-top: 70px;
   }
 }
 
 .description {
+  opacity: 0;
   width: 40%;
   font-size: 14pt;
   line-height: 18pt;
   margin: auto;
+  @include intro-animation($delay: 2.5s, $duration: 1s, $animation: fadein);
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  input[type="text"] {
+    opacity: 0;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 15px;
+    width: 225px;
+    margin-top: 20px;
+    @include border-radius(15px, 15px);
+    @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
+  }
 }
