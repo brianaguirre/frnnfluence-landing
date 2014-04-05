@@ -38,16 +38,27 @@
 form {
   width: 100%;
   text-align: center;
+  font-size: 22pt;
+  &:after {
+    color: darkgray;
+    content:'>';
+    margin-top: 32px;
+    position: absolute;
+    opacity: 0;
+    margin-left: -25px;
+    @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
+  }
   input[type="tel"] {
+    text-decoration: none;
     opacity: 0;
     border: 1px solid white;
     background-color: transparent;
     padding: 15px;
     width: 225px;
+    font-size: 14pt;
     margin-top: 20px;
     color: white;
-    -webkit-font-smoothing:antialiased;
-    font-size: 14pt;
+    -webkit-font-smoothing: antialiased;
     outline: none;
     @include border-radius(15px, 15px);
     @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
