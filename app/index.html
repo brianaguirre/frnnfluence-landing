@@ -31,7 +31,13 @@
       <h1>frnnfluence</h1>
     </div>
 
-    <p>wassup</p>
+
+    <form>
+      Name: <input type="text" name="firstname" id="name" value="">
+      <br>
+      Number: <input type="text" name="lastname" id="number" value="">
+      <input type="button" value="click" onclick="getData();"/></form>
+    
 
 
     <!-- build:js scripts/vendor.js -->
@@ -49,10 +55,20 @@
       ga('create', 'UA-48354895-3', 'visytact.github.io');
       ga('send', 'pageview');
 
+     
+     function getData(){
+        var name = document.getElementById('name').value;
+        var number = document.getElementById('number').value;
+        console.log(name);
+        console.log(number);
+      };
+
+
     </script>
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
+   
     <!-- endbuild -->
 </body>
 </html>
