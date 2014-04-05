@@ -6,6 +6,7 @@
   h1 {
     opacity: 0;
     @include intro-animation($delay: 0.5s, $duration: 1s, $animation: fadein-and-down);
+    -webkit-backface-visibility: hidden; // Prevents flickering from CSS3 animation
     font-size: 48pt;
     width: 100%;
     text-align: center;
@@ -15,6 +16,7 @@
   .battery {
     opacity: 0;
     @include intro-animation($delay: 1.5s, $duration: 1s, $animation: fadein);
+    -webkit-backface-visibility: hidden;
   }
   p {
     width: 100%;
@@ -30,6 +32,7 @@
   line-height: 18pt;
   margin: auto;
   @include intro-animation($delay: 2.5s, $duration: 1s, $animation: fadein);
+  -webkit-backface-visibility: hidden;
 }
 
 form {
@@ -44,5 +47,6 @@ form {
     margin-top: 20px;
     @include border-radius(15px, 15px);
     @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
+    -webkit-backface-visibility: hidden;
   }
 }
