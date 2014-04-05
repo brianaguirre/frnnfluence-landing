@@ -2,7 +2,6 @@
   "name": "frnnfluence-landing",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.0.3",
     "jquery": "~1.11.0"
   },
   "devDependencies": {}
