@@ -38,13 +38,17 @@
 form {
   width: 100%;
   text-align: center;
-  input[type="text"] {
+  input[type="tel"] {
     opacity: 0;
     border: 1px solid white;
     background-color: transparent;
     padding: 15px;
     width: 225px;
     margin-top: 20px;
+    color: white;
+    -webkit-font-smoothing:antialiased;
+    font-size: 14pt;
+    outline: none;
     @include border-radius(15px, 15px);
     @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
     -webkit-backface-visibility: hidden;
