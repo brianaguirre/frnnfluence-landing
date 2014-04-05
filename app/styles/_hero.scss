@@ -8,10 +8,13 @@
     width: 100%;
     text-align: center;
     font-family: $sans-serif;
-    padding-top: 150px;
+    margin-top: -20px;
   }
   p {
+    opacity: 0;
     width: 100%;
+    @include intro-animation($delay: 1.5s, $duration: 1s, $animation: fadein);
     text-align: center;
+    padding-top: 70px;
   }
 }
