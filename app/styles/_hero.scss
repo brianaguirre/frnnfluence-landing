@@ -1,0 +1,17 @@
+.hero-unit {
+  @include full-size-images($background: "/images/opening.jpg");
+  h1 {
+    opacity: 0;
+    @include intro-animation($delay: 0.5s, $duration: 1s, $animation: fadein-and-down);
+    color: white;
+    font-size: 48pt;
+    width: 100%;
+    text-align: center;
+    font-family: $sans-serif;
+    padding-top: 150px;
+  }
+  p {
+    width: 100%;
+    text-align: center;
+  }
+}
