@@ -1,21 +1,67 @@
+@import "compass/css3/border-radius";
+
 .hero-unit {
   @include full-size-images($background: "/images/opening.jpg");
+  color: white;
   h1 {
     opacity: 0;
     @include intro-animation($delay: 0.5s, $duration: 1s, $animation: fadein-and-down);
-    color: white;
+    -webkit-backface-visibility: hidden; // Prevents flickering from CSS3 animation
     font-size: 48pt;
     width: 100%;
     text-align: center;
     font-family: $sans-serif;
     margin-top: -20px;
   }
-  p {
+  .battery {
     opacity: 0;
-    width: 100%;
     @include intro-animation($delay: 1.5s, $duration: 1s, $animation: fadein);
+    -webkit-backface-visibility: hidden;
+  }
+  p {
+    width: 100%;
     text-align: center;
     padding-top: 70px;
   }
-  
+}
+
+.description {
+  opacity: 0;
+  width: 40%;
+  font-size: 14pt;
+  line-height: 18pt;
+  margin: auto;
+  @include intro-animation($delay: 2.5s, $duration: 1s, $animation: fadein);
+  -webkit-backface-visibility: hidden;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  font-size: 22pt;
+  &:after {
+    color: darkgray;
+    content:'>';
+    margin-top: 32px;
+    position: absolute;
+    opacity: 0;
+    margin-left: -25px;
+    @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
+  }
+  input[type="tel"] {
+    text-decoration: none;
+    opacity: 0;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 15px;
+    width: 225px;
+    font-size: 14pt;
+    margin-top: 20px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+    @include border-radius(15px, 15px);
+    @include intro-animation($delay: 4s, $duration: 1s, $animation: fadein-and-down);
+    -webkit-backface-visibility: hidden;
+  }
 }
