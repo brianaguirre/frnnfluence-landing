@@ -31,17 +31,24 @@ $('#phone-input').keypress(function() {
   }
 });
 
-// Twilio Credentials 
-var accountSid = 'ACc8207223279ac5e9cc3e55a9ad620abd'; 
-var authToken = '97d0234167d62771f8385138c45fe8b0';
- 
-//require the Twilio module and create a REST client 
-var client = require('twilio')(accountSid, authToken); 
+function sendSMS(){
+  var num = $('#phone-input').val();
+  num = num.replace(/\D/g, ''); // Remove masks for url
+  $.ajax({
+    accept: 'application/json',
+    contentType: "application/json; charset=utf-8",
+    url: ('https://api.tropo.com/1.0/sessions?action=create&token=26bb50dd4e63f04c8f3990c75d79f2b8d2a28bbe847e2028e4448cbe19b6e705cff553baa8738360419fe8fc&to=' + num + '&msg=the+sky+is+falling'),
+    dataType: 'jsonp',
+    success: function(data) {
+        console.log( data ); 
+    }
+  });
+}
 
-client.messages.create({ 
-  to: "7036777745", 
-  from: "+12025170790", 
-  body: "Thanks for your interest on frnnnfluence! Here is the link to the app: http://invis.io/HJR77HNT",
-}, function(err, message) { 
-  console.log(message.sid); 
-});
+
+
+
+
+
+
+
